@@ -1,0 +1,33 @@
+.jumbotron {
+  background-color: #419bf9 !important;
+  text-align: center;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  text-align: center;
+}
+
+.temp {
+  background-color: lightgray;
+  height: 100px;
+  text-align: center;
+}
+
+.fundo {
+  background-color: rgba(247, 247, 247, 0.9);
+}
+
+.city{
+  margin-top: -70px ;
+}
+
+.ion-android-search{
+  position: absolute;
+  top: 32%;
+  right: 37%;
+  font-size: 20px;
+  color:#419bf9;
+}

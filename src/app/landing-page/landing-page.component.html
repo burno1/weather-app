@@ -1,0 +1,46 @@
+<div class="fluid-container">
+  <div class="fluid-container fundo">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4" style="color: aliceblue;">WEATHER IN YOUR CITY</h1>
+      <label>
+        <input
+          class="form-control"
+          type="text"
+          [formControl]="cidadeForm"
+          (keyup.enter)="pesquisar()"
+          placeholder="Insira o nome da cidade"
+          autofocus
+        />
+        
+      </label>
+    </div>
+  </div>
+  <div *ngIf="cidade" class="card city" style="width: 40%;">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-4 my-auto temp card-body">
+          <h2 class="card-subtitle mb-4 text-muted">{{ cidade?.temp }}ºC</h2>
+        </div>
+        <div class="col-sm-4">
+          <a routerLink="/city/{{ cidade.id }}"
+            ><h4 class="card-title">
+              {{ cidade?.name }}, {{ cidade?.country }}
+            </h4></a
+          >
+          
+          <p class="card-text" >Máx: <b style="color: red;">{{ cidade?.clima?.temp_max }} ºC</b></p>
+          <p class="card-text" >Min: <b style="color:blue;">{{ cidade?.clima?.temp_min }} ºC</b></p>
+        </div>
+        <br>
+        <div class="col-sm-4">
+          
+        <i class=""><img src="https://openweathermap.org/img/w/{{cidade?.clima?.icon}}.png" alt="icone clima">	
+        </i>
+          <p class="card-text">{{ cidade?.clima?.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

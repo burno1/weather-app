@@ -1,0 +1,84 @@
+<div class="fluid-container">
+  <span><a  routerLink=""><i class="ion-android-arrow-back" style="color: white;"></i></a></span>
+  <div class="jumbotron jumbotron-fluid">
+    <label>
+      <input
+        class="form-control"
+        type="text"
+        [formControl]="cidadeForm"
+        (keyup.enter)="pesquisar()"
+        placeholder="Insira o nome da cidade"
+      />
+      
+    </label>
+  </div>
+
+  
+    <div class="com-sm-4" style="text-align: center;">
+      <h2>Weather in {{ cidade.name }}, {{ cidade?.country }}</h2>
+      <p>{{dataAtual}}</p>
+    </div>
+  
+
+  <br />
+  <div class="container lista">
+    <br />
+    <div class="row" style="text-align: center; height: 50%;">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-body">
+        <div class="temp card-subtitle mb-2 text-muted">
+          <h1>{{cidade?.temp}}ºC</h1>
+        </div>
+        <i class=""><img src="https://openweathermap.org/img/w/{{cidade?.clima?.icon}}.png" alt="icone clima">	
+        </i>
+        <p>{{cidade?.clima?.description}}</p>
+      </div>
+    </div>
+  </div>
+
+      <div class="col-sm-6" style="text-align: left;">
+        <p><b>Máx:</b>&nbsp;    <b style="color: red;">{{ cidade.clima.temp_max }}ºC</b></p>
+        <hr>
+        <p><b>Mín:</b>&nbsp;    <b style="color: blue;">{{ cidade.clima.temp_min }}ºC</b></p>
+        <hr>
+        <p><b>Sunrise:</b>&nbsp;    {{ cidade.sunrise }}</p>
+        <hr>
+        <p><b>Sunset:</b> &nbsp;    {{ cidade.sunset }}</p>
+      </div>
+    </div>
+
+    <hr />
+    
+      <h3>5 day weather forecast <small>every 3 hours</small></h3>
+    
+    <div class="itens" *ngFor="let clima of lista; let i = index">
+      <div class="card ">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-2">
+              <p>{{ clima.dia }}</p>
+              <span>{{ clima.hora }}</span>
+            </div>
+            <div class="col-sm-4">
+              <i class=""><img src="https://openweathermap.org/img/w/{{clima?.icon}}.png" alt="icone clima">	
+              </i>
+      
+            </div>
+            <div class="col-sm-2">
+              {{ clima.description }}
+            </div>
+            <div class="col-sm-2">
+              <b><p style="color: red;">{{ clima.temp_max }} ºC</p>
+              </b>
+            </div>
+            <div class="col-sm-2">
+              <b><p style="color:blue;">{{ clima.temp_min }} ºC</p>
+              </b>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+.jumbotron {
+  background-color: #419bf9 !important;
+  text-align: center;
+}
+
+.fluid-container {
+  background-color: rgba(247, 247, 247, 0.9);
+}
+.temp {
+  background-color: lightgray;
+  top: 0%;
+}
+
+.lista {
+  background-color: white;
+}
+
+.mb-2 {
+  height: auto;
+  top: 100%;
+}
+
+.card:hover {
+  background-color: rgba(247, 247, 247, 0.9);
+}
+
+.ion-android-arrow-back{
+  position: absolute;
+  top: 50px;
+  font-size: 30px;
+  left: 50px;    
+}
+
